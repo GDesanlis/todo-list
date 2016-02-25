@@ -1,0 +1,8 @@
+{
+  "expose": {
+    "tasks": ["create", "read", "readAll", "update", "delete", "readAndUpdate", "readAllWithFilter"]
+  },
+  "errorCodeMongoToHTTP" : {
+    "11000": 409
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "protocol": "http",
+  "host": "127.0.0.1",
+  "port": 4000,
+  "apiPath": "/api/",
+  "apiVersion": "v1",
+  "endPoints": {
+    "tasks": "/tasks",
+    "task": "/tasks/{taskId}",
+    "status": "/tasks/status/{statusId}"
+  }
+}
