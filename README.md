@@ -1,5 +1,15 @@
 # TODO MVC en AngularJS 2
 
+##**Utilisation**
+
+- Créer une base de données mongo "todo" ("mongo use todo").
+- Créer une collection "tasks" dans cette dernière (db.createCollection('tasks');). 
+- Dans les dossiers back et front, lancer les commandes :
+	- "npm install".
+	- "npm start" (ou "gulp" pour le front).
+
+---------
+
 ###**Frontend**
 
 <kbd>*AngularJS 2 / TypeScript + Bootstrap*</kbd>
