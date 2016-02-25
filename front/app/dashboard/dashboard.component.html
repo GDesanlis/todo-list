@@ -4,7 +4,7 @@
 		<div class="col-md-3">
 			<h3 class="text-center"><span class="label label-default">Non classée</span></h3>
 			<div *ngFor="#todo of todos" (click)="gotoDetail(todo)" >
-				<div class="blockquote-box clearfix">
+				<div class="blockquote-box clearfix" *ngIf="todo.status === 'Aucun'">
 					<div class="square">
 						<p>{{todo.content}}</p>
 						<button class="btn btn-default" (click)="gotoDetail(todo)"><span class="glyphicon glyphicon-pencil"></span></button>
@@ -16,7 +16,7 @@
 		<div class="col-md-3">
 			<h3 class="text-center"><span class="label label-danger">A faire</span></h3>
 			<div *ngFor="#todo of todos" (click)="gotoDetail(todo)" >
-				<div class="blockquote-box blockquote-danger clearfix">
+				<div class="blockquote-box blockquote-danger clearfix" *ngIf="todo.status === 'A faire'">
 					<div class="square">
 						<p>{{todo.content}}</p>
 						<button class="btn btn-default" (click)="gotoDetail(todo)"><span class="glyphicon glyphicon-pencil"></span></button>
@@ -28,7 +28,7 @@
 		<div class="col-md-3">
 			<h3 class="text-center"><span class="label label-warning">En cours</span></h3>
 			<div *ngFor="#todo of todos" (click)="gotoDetail(todo)" >
-				<div class="blockquote-box blockquote-warning clearfix">
+				<div class="blockquote-box blockquote-warning clearfix" *ngIf="todo.status === 'En cours'">
 					<div class="square">
 						<p>{{todo.content}}</p>
 						<button class="btn btn-default" (click)="gotoDetail(todo)"><span class="glyphicon glyphicon-pencil"></span></button>
@@ -40,7 +40,7 @@
 		<div class="col-md-3">
 			<h3 class="text-center"><span class="label label-success">Terminée</span></h3>
 			<div *ngFor="#todo of todos" (click)="gotoDetail(todo)" >
-				<div class="blockquote-box blockquote-success clearfix">
+				<div class="blockquote-box blockquote-success clearfix" *ngIf="todo.status === 'Terminée'">
 					<div class="square">
 						<p>{{todo.content}}</p>
 						<button class="btn btn-default" (click)="gotoDetail(todo)"><span class="glyphicon glyphicon-pencil"></span></button>
