@@ -1,0 +1,11 @@
+<h2>List:</h2>
+<button (click)="newTask()">New task:</button>
+<div class="list-group">
+    <div *ngFor="#todo of todos" (click)="gotoDetail(todo)" class="list-group-item" >
+        <div class="module todo">
+            {{todo.content}}
+            <br>
+            <button (click)="remove(todo)">Done</button>
+        </div>
+    </div>
+</div>
