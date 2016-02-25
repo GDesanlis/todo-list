@@ -109,7 +109,8 @@ class TasksLib {
                     // assign new variables
                     const Data = {
                         content: payload.content,
-                        creationDate : new Date()
+                        creationDate : new Date(),
+                        modificationDate : new Date()
                     };
 
                     if (payload.status) {
