@@ -7,10 +7,13 @@ import {TodoService} from "./todo/todo.service";
 @Component({
     selector: 'my-app',
     template: `
-      <h1>{{title}}</h1>
+      <div class="jumbotron">
+      <div class="container">
+        <h1>{{title}}</h1>
+      </div>
+      </div>
       <router-outlet></router-outlet>
     `,
-    styleUrls: ['app/app.component.css'],
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,
@@ -31,5 +34,5 @@ import {TodoService} from "./todo/todo.service";
     }
 ])
 export class AppComponent {
-    title = 'Todo list';
+    title = 'Todo List';
 }
