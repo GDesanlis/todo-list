@@ -2,10 +2,12 @@ import { Component, OnInit, Inject } from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
 import {Todo} from "../todo/todo";
 import {TodoService} from "../todo/todo.service";
+import {UnicodeToDatePipe} from "./unicodetodate.pipe";
 
 @Component({
     selector: 'my-todo-detail',
-    templateUrl: 'app/todo-detail/todo-detail.component.html'
+    templateUrl: 'app/todo-detail/todo-detail.component.html',
+    pipes: [UnicodeToDatePipe]
 })
 export class TodoDetailComponent implements OnInit {
     public todo:Todo;
