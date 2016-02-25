@@ -1,10 +1,20 @@
 <div *ngIf="todo">
     <h2>{{todo.id}} details!</h2>
     <div>
-        <label>id: </label>{{todo.id}}</div>
+        <label>id: </label><br>
+        {{todo.id}}</div>
     <div>
-        <label>task: </label>
+        <label>Contenu: </label><br>
         <input [(ngModel)]="todo.content" placeholder="task" />
+    </div>
+    <div>
+        <p>Date de création: {{todo.creationDate}}</p>
+    </div>
+    <div>
+        <label>Status: </label><br>
+        <select [(ngModel)]="todo.status">
+            <option *ngFor="#s of status" [value]="s">{{s}}</option>
+        </select>
     </div>
     <button (click)="goBack()">Back</button>
     <button (click)="save(todo)">Save</button>

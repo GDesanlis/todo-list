@@ -10,6 +10,7 @@ import {TodoService} from "../todo/todo.service";
 })
 export class TodoDetailComponent implements OnInit {
     public todo:Todo;
+    public status = ['Aucun', 'A faire', 'En cours', 'Terminée'];
     id:string;
     errorMessage:string;
 
@@ -27,7 +28,7 @@ export class TodoDetailComponent implements OnInit {
     getTodo(id:string) {
         this._todoService.getTodoById(id)
             .subscribe(
-                todo => this.todo = todo,
+                todo => { this.todo = todo; },
                 error => this.errorMessage = <any>error);
     }
 
