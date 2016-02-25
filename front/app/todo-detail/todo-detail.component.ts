@@ -5,8 +5,7 @@ import {TodoService} from "../todo/todo.service";
 
 @Component({
     selector: 'my-todo-detail',
-    templateUrl: 'app/todo-detail/todo-detail.component.html',
-    styleUrls: ['app/todo-detail/todo-detail.component.css']
+    templateUrl: 'app/todo-detail/todo-detail.component.html'
 })
 export class TodoDetailComponent implements OnInit {
     public todo:Todo;
@@ -41,5 +40,14 @@ export class TodoDetailComponent implements OnInit {
             .subscribe(
                 todo => this._router.navigate(['Dashboard']),
                 error => this.errorMessage = <any>error);
+    }
+
+    remove(todo:Todo){
+        this._todoService.removeTodo(todo.id)
+            .subscribe(
+                () => {
+                    this._router.navigate(['Dashboard']);
+                    },
+                error =>  this.errorMessage = <any>error);
     }
 }

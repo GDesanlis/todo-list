@@ -1,21 +1,45 @@
-<div *ngIf="todo">
-    <h2>{{todo.id}} details!</h2>
-    <div>
-        <label>id: </label><br>
-        {{todo.id}}</div>
-    <div>
-        <label>Contenu: </label><br>
-        <input [(ngModel)]="todo.content" placeholder="task" />
+<div class="container">
+    <div *ngIf="todo">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-pencil"></span> Contenu :</span>
+                        <input type="text" [(ngModel)]="todo.content" class="form-control" placeholder="Tâche" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-tag"></span> Statut :</span>
+                        <select [(ngModel)]="todo.status" class="form-control">
+                            <option *ngFor="#s of status" [value]="s">{{s}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar"></span> Date de création :</span>
+                        <input type="text" [(ngModel)]="todo.creationDate" class="form-control" placeholder="Date de Création" aria-describedby="basic-addon1" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar"></span> Dernière modification :</span>
+                        <input type="text" [(ngModel)]="todo.modificationDate" class="form-control" placeholder="Date de Modification" aria-describedby="basic-addon1" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-default" (click)="goBack()"><span class="glyphicon glyphicon-remove"></span> Annuler</button>
+                <button class="btn btn-danger" (click)="remove(todo)"><span class="glyphicon glyphicon-trash"></span> Supprimmer</button>
+                <button class="btn btn-success" (click)="save(todo)"><span class="glyphicon glyphicon-ok"></span> Enregistrer</button>
+            </div>
+        </div>
     </div>
-    <div>
-        <p>Date de création: {{todo.creationDate}}</p>
-    </div>
-    <div>
-        <label>Status: </label><br>
-        <select [(ngModel)]="todo.status">
-            <option *ngFor="#s of status" [value]="s">{{s}}</option>
-        </select>
-    </div>
-    <button (click)="goBack()">Back</button>
-    <button (click)="save(todo)">Save</button>
 </div>
