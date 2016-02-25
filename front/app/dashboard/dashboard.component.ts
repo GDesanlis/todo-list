@@ -48,15 +48,8 @@ export class DashboardComponent implements OnInit {
     remove(todo:Todo){
         this._todoService.removeTodo(todo.id)
             .subscribe(
-                () => {
-                    //this._router.navigate(['Dashboard']);
-                    for (i =0 ; i < this.todos.length ; i++)
-                        if (this.todos[i].id == todo.id){
-                            this.todos.splice(i,1);
-                            break;
-                        }
-
-                    },
+                () => {                                 
+                    this.todos = this.todos.filter((t) => t.id !== todo.id);},
                 error =>  this.errorMessage = <any>error);
     }
 }
