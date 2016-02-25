@@ -57,6 +57,7 @@ export class TodoService {
 
         const body = '{' +
             '"content":' + JSON.stringify(todo.content)
+            + ',"status":' + JSON.stringify(todo.status)
             + '}';
         const headers = new Headers({'Content-Type': 'application/json'});
         const options = new RequestOptions({headers: headers});

@@ -114,6 +114,11 @@ class TasksLib {
 
                     if (payload.status) {
                         Object.assign(Data, { status: payload.status });
+                    } else {
+                        const aucun = {
+                            status: 'Aucun'
+                        }
+                        Object.assign(Data, { status: aucun.status });
                     }
 
                     this.server.log(['debug'], '< Tasks.Lib.create > Data to insert in DB => ' + JSON.stringify(Data));
